@@ -20,15 +20,26 @@
           <h1>{{ product }}</h1>
           <p v-if="inStock">In Stock</p>
           <p v-else>Out of Stock</p>
+          <div class="displayImg">
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <td v-for="variant in variants" :key="variantId">
+                    <button v-on:click="updateImage(variant.variantImage)">{{ variant.variantVue }}</button>
+                  </td>
+                </tr>
+              </thead>
+            </table>
+
+
+            <div class="image">
+              <img :src="image">
+            </div>
+          </div>
           <ul>
             <li v-for="detail in details">{{ detail }}</li>
           </ul>
-          <div v-for="variant in variants" :key="variant.id">
-            <button v-on:click="clickMethod">{{ variant.variantVue }}</button>
-          </div>
-          <div class="image">
-            <img :src="image">
-          </div>
         </div>
       </div>
     </div>

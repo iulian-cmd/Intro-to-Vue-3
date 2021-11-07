@@ -24,8 +24,8 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        clickMethod() {
-            image = "variant.variantImage" //add code that you wish to happen on click
+        updateImage(variantImage) {
+            this.image = variantImage
         }
     }
 });
